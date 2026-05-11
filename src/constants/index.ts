@@ -13,6 +13,9 @@ interface IStoreConfig {
   collectionName: string;
   qdrantUrl: string;
 }
+interface IEmbedderConfig{
+    model:string;
+}
 
 export const SUPPORTED_EXTENSIONS:ReadonlyArray<string>=[".txt",".md"]
 
@@ -28,6 +31,9 @@ export const CHUNK_OPTIONS:Readonly<IChunkConfig>={
 
 export const BATCH_COLLECTOR_OPTIONS:Readonly<IBatchCollectorConfig>={
     batchSize:10
+}
+export const EMBEDDER_OPTIONS:Readonly<IEmbedderConfig>={
+    model:'',
 }
 export const STORE_OPTIONS:Readonly<IStoreConfig>={
     collectionName:'',

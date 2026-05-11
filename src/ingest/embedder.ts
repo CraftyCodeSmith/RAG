@@ -1,3 +1,4 @@
+import { EMBEDDER_OPTIONS } from "../constants/index.js"
 import type { EmbeddedChunk, EmbeddingVector } from "../types.ts/ingest.js"
 
 async function generateEmbedding(text:string):Promise<EmbeddingVector>{
@@ -7,7 +8,7 @@ async function generateEmbedding(text:string):Promise<EmbeddingVector>{
             "Content-Type":"application/json"
         },
         body:JSON.stringify({
-            model:'', //provide model
+            model:EMBEDDER_OPTIONS.model,
             prompt:text
         })
     })
