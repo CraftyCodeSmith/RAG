@@ -9,7 +9,7 @@ async function generateEmbedding(text:string):Promise<EmbeddingVector>{
         },
         body:JSON.stringify({
             model:EMBEDDER_OPTIONS.model,
-            prompt:text
+            prompt:EMBEDDER_OPTIONS.prompt + text
         })
     })
     if(!response.ok){

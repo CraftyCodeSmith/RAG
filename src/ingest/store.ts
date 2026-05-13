@@ -21,4 +21,5 @@ export async function storeEmbeddings(
             points
         })
     }
+    console.log("::Done")
 }

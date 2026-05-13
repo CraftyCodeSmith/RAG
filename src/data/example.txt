@@ -1,0 +1,63 @@
+Acme Analytics Internal Knowledge Base
+
+Company Overview
+
+Acme Analytics is a fictional SaaS company founded in 2018. The company
+builds data visualization and workflow automation tools for small and
+medium businesses.
+
+Headquarters: Austin, Texas, USA Employees: 240 CEO: Maya Chen CTO:
+Daniel Ortiz
+
+Mission: To simplify business intelligence for non-technical teams.
+
+Products
+
+InsightBoard
+
+InsightBoard is a dashboard platform that allows users to connect
+multiple data sources such as PostgreSQL, MySQL, Salesforce, and Google
+Sheets.
+
+Key features: - Drag-and-drop dashboard builder - Real-time analytics
+refresh every 5 minutes - Role-based access control - CSV and PDF export
+
+Pricing: - Starter: $29/month - Growth: $99/month - Enterprise: Custom
+pricing
+
+FlowSync
+
+FlowSync is an automation engine used to trigger workflows across
+applications.
+
+Supported integrations: - Slack - HubSpot - Notion - Jira - Zapier
+
+Common use cases: 1. Send Slack alerts when revenue drops below
+threshold 2. Auto-create Jira tickets from customer complaints 3. Sync
+CRM leads into internal database
+
+Security Policies
+
+-   All user passwords are hashed using bcrypt.
+-   Database backups run daily at 2:00 AM UTC.
+-   Backups are retained for 30 days.
+-   MFA is required for all admin accounts.
+
+Customer Support
+
+Support channels: - Email: support@acmeanalytics.com - Live chat
+available 9 AM to 6 PM CST - Enterprise customers get 24/7 priority
+support
+
+Average SLA: - Critical issues: 1 hour - High priority: 4 hours - Normal
+issues: 24 hours
+
+Engineering Notes
+
+Primary backend stack: - Python (FastAPI) - PostgreSQL - Redis -
+Docker - Kubernetes
+
+Deployment: - Production hosted on AWS EKS - CI/CD via GitHub Actions
+
+Monitoring: - Prometheus for metrics - Grafana dashboards - Sentry for
+error tracking

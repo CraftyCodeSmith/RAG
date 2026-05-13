@@ -8,7 +8,7 @@ const client = new QdrantClient({
 
 await client.createCollection("documents", {
   vectors: {
-    size: 1024,
+    size: 768,
     distance: "Cosine",
   },
 });
