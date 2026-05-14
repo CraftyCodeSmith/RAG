@@ -14,10 +14,13 @@ interface IStoreConfig {
   qdrantUrl: string;
 }
 interface IEmbedderConfig {
-  model: string;
+  model: 'nomic-embed-text' | 'mxbai-embed-large';
   prompt: string;
 }
-
+interface IRetrieveOptions {
+  model:'llama3' | 'mistral-small' | 'qwen2.5:32b',
+  prompt:(context:string,question:string)=>string
+}
 export const SUPPORTED_EXTENSIONS: ReadonlyArray<string> = [".txt", ".md"];
 
 export const LOADER_OPTIONS: Readonly<ILoaderConfig> = {
@@ -53,3 +56,30 @@ export const STORE_OPTIONS: Readonly<IStoreConfig> = {
   collectionName: "documents",
   qdrantUrl: "http://localhost:6333", //localhost
 };
+export const RETRIVE_OPTIONS: Readonly<IRetrieveOptions>={
+  model:'llama3',
+  prompt:(context,question)=>{
+     const prompt=  `
+You are a retrieval-augmented assistant.
+
+Answer the question using ONLY the provided context.
+
+Rules:
+- Return ONLY the final answer.
+- Do NOT mention chunks, context, sources, or explanations.
+- Do NOT say "Based on the provided context".
+- Keep the answer concise and direct.
+- If the answer is not in the context, return exactly:
+I could not find the answer in the provided context.
+
+CONTEXT:
+${context}
+
+QUESTION:
+${question}
+
+FINAL ANSWER:
+`.trim();
+return prompt;
+  }
+}

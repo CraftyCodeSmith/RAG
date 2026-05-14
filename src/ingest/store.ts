@@ -1,13 +1,13 @@
 import { QdrantClient } from "@qdrant/js-client-rest";
 import type { EmbeddedChunk, QdrantPayload } from "../types.ts/ingest.js";
 import { STORE_OPTIONS } from "../constants/index.js";
+import { getDbClient } from "../db/vectorStore.js";
 
 export async function storeEmbeddings(
     stream:AsyncGenerator<EmbeddedChunk[]>,
 ){
-    const client = new QdrantClient({
-        url:STORE_OPTIONS.qdrantUrl
-    })
+    const client = getDbClient()
+    
     for await (const batch of stream){
         const points = batch.map((chunk,index)=>({
             id:crypto.randomUUID(),
