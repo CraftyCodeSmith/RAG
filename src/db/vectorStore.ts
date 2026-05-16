@@ -5,9 +5,11 @@ export const getDbClient = (): QdrantClient => {
 
   if (!instance) {
     instance = new QdrantClient({
-            url:STORE_OPTIONS.qdrantUrl
+            url:STORE_OPTIONS.qdrantUrl,
+            checkCompatibility:false,
+            port:null
+            
         })
   }
-  
   return instance;
 };

@@ -1,4 +1,3 @@
-import { QdrantClient } from "@qdrant/js-client-rest";
 import type { EmbeddedChunk, QdrantPayload } from "../types.ts/ingest.js";
 import { STORE_OPTIONS } from "../constants/index.js";
 import { getDbClient } from "../db/vectorStore.js";
