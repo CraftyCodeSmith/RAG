@@ -29,7 +29,6 @@ export const retrieveRelevantChunks = async ({
       limit: topK,
       with_payload: true,
     });
-    console.log(response)
     const chunks = response.map((point) => {
 
       return {

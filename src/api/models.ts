@@ -11,7 +11,7 @@ interface OllamaResponse {
 
 export const callResponseModel = async (prompt: string) => {
   try {
-    const response = await fetch(`${process.env.OLLAMA_URL}/generate`, {
+    const response = await fetch(`${process.env.OLLAMA_URL}/api/generate`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
