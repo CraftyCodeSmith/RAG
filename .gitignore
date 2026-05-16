@@ -2,3 +2,4 @@ node_modules
 .kilo
 .vscode
 dist
+.env

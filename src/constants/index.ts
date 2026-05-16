@@ -54,7 +54,7 @@ Text:
 };
 export const STORE_OPTIONS: Readonly<IStoreConfig> = {
   collectionName: "documents",
-  qdrantUrl: "http://localhost:6333", //localhost
+  qdrantUrl: `${process.env.QDRANT_URL}`, 
 };
 export const RETRIVE_OPTIONS: Readonly<IRetrieveOptions>={
   model:'llama3',

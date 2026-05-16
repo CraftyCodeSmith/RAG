@@ -5,7 +5,16 @@ import express, { type NextFunction, type Request, type Response } from 'express
 import cors from 'cors';
 import helmet from 'helmet';
 import { RAG } from './rag/index.js';
-
+import dotenv from 'dotenv';
+dotenv.config()
+declare global {
+  namespace NodeJS {
+    interface ProcessEnv {
+      QDRANT_URL: string;
+      OLLAMA_URL: string;
+    }
+  }
+}
 const app = express();
 const PORT = process.env.PORT || 3000;
 

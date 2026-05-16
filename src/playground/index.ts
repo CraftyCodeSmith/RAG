@@ -3,7 +3,7 @@ import { QdrantClient } from "@qdrant/js-client-rest";
 //to be ran for once only
 
 const client = new QdrantClient({
-  url: "http://localhost:6333",
+  url: `${process.env.QDRANT_URL}`,
 });
 
 await client.createCollection("documents", {

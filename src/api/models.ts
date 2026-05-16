@@ -11,7 +11,7 @@ interface OllamaResponse {
 
 export const callResponseModel = async (prompt: string) => {
   try {
-    const response = await fetch("http://localhost:11434/api/generate", {
+    const response = await fetch(`${process.env.OLLAMA_URL}/generate`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -43,7 +43,7 @@ export const callResponseModel = async (prompt: string) => {
 
 export async function generateEmbedding(text:string):Promise<EmbeddingVector>{
   try {
-    const response = await fetch("http://localhost:11434/api/embeddings",{
+    const response = await fetch(`${process.env.OLLAMA_URL}/embeddings`,{
         method:"POST",
         headers:{
             "Content-Type":"application/json"
