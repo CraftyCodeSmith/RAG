@@ -1,3 +1,5 @@
+import dotenv from 'dotenv';
+dotenv.config();
 interface ILoaderConfig {
   chunkSize: number;
   encoding: "utf-8";
@@ -21,6 +23,7 @@ interface IRetrieveOptions {
   model:'llama3' | 'mistral-small' | 'qwen2.5:32b',
   prompt:(context:string,question:string)=>string
 }
+
 export const SUPPORTED_EXTENSIONS: ReadonlyArray<string> = [".txt", ".md"];
 
 export const LOADER_OPTIONS: Readonly<ILoaderConfig> = {

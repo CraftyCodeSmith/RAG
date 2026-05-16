@@ -1,11 +1,9 @@
-// import * as playground from "./playground/index.js"
-// import * as ingestPipeline from "./ingest/index.js" 
-
 import express, { type NextFunction, type Request, type Response } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import { RAG } from './rag/index.js';
 import dotenv from 'dotenv';
+
 dotenv.config()
 declare global {
   namespace NodeJS {

@@ -43,7 +43,7 @@ export const callResponseModel = async (prompt: string) => {
 
 export async function generateEmbedding(text:string):Promise<EmbeddingVector>{
   try {
-    const response = await fetch(`${process.env.OLLAMA_URL}/embeddings`,{
+    const response = await fetch(`${process.env.OLLAMA_URL}/api/embeddings`,{
         method:"POST",
         headers:{
             "Content-Type":"application/json"
@@ -64,7 +64,7 @@ export async function generateEmbedding(text:string):Promise<EmbeddingVector>{
     return data.embedding    
   } catch (error) {
     if (error instanceof Error) {
-      throw new Error(`Generation failed: ${error.message}`);
+      throw new Error(`Generation failed: ${error.message}` );
     }
 
     throw new Error("Unknown generation error");
